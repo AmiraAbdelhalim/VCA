@@ -7,16 +7,20 @@ class VcaCertificates(models.Model):
     _description = 'VCA Certificate'
     _rec_name = 'serial_number'
 
-    serial_number = fields.Char('Serial Number', default='', readonly=True)
-    vehicle_type = fields.Selection([
+    VEHICLE_TYPES = [
         ('car', 'Car'),
         ('bus', 'Bus'),
         ('minibus', 'Minibus'),
         ('microbus', 'Microbus')
-    ])
-    car_model = fields.Selection([(str(year), str(year)) for year in range(datetime.now().year,
-                                                                           (datetime.now().year - 21), -1)])
+    ]
+
+    CAR_MODEL_YEARS = [(str(year), str(year)) for year in range(datetime.now().year,(datetime.now().year - 21), -1)]
+
+    serial_number = fields.Char('Serial Number', default='', readonly=True)
+    vehicle_type = fields.Selection(VEHICLE_TYPES, default=VEHICLE_TYPES[0][0])
+    car_model = fields.Selection(CAR_MODEL_YEARS, default=CAR_MODEL_YEARS[0][0])
     price = fields.Integer()
+    certificate_type_id = fields.Many2one(comodel_name='vca.certificate_type')
 
     @api.model
     def create(self, vals):

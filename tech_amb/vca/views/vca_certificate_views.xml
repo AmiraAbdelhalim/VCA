@@ -15,12 +15,6 @@
             </field>
         </record>
 
-        <record id="vca_certificate_action" model="ir.actions.act_window">
-            <field name="name">Certificate</field>
-            <field name="res_model">vca.certificate</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
 <!--        sequence number -->
         <record id="vca_unique_serial_number" model="ir.sequence">
            <field name="name">Serial Number</field>
@@ -32,10 +26,16 @@
            <field name="number_increment">1</field>
         </record>
 
+         <record id="vca_certificate_action" model="ir.actions.act_window">
+            <field name="name">Certificate</field>
+            <field name="res_model">vca.certificate</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
 
 
         <menuitem id="vca_root_menu" name="VCA"/>
-        <menuitem id="vca_data_menu" name="Certificates" parent="vca_root_menu" action="vca_certificate_action"/>
+        <menuitem id="vca_certificate_menu" name="Certificates" parent="vca_root_menu" action="vca_certificate_action"/>
 
     </data>
 </odoo>
