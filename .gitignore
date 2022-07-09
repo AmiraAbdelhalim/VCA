@@ -1,0 +1,11 @@
+tech_amb/hms
+tech_amb/hms/*
+tech_amb/vca/__pycache__
+tech_amb/vca/__pycache__/*
+
+odoo
+odoo/*
+
+
+.idea
+.idea/*
