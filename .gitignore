@@ -2,6 +2,8 @@ tech_amb/hms
 tech_amb/hms/*
 tech_amb/vca/__pycache__
 tech_amb/vca/__pycache__/*
+tech_amb/vca/models/__pycache__
+tech_amb/vca/models/__pycache__/*
 
 odoo
 odoo/*
