@@ -9,7 +9,10 @@
                 <tree>
                     <field name="serial_number"/>
                     <field name="vehicle_type"/>
+                    <field name="certificate_type_id"/>
+                    <field name="customer_id"/>
                     <field name="car_model"/>
+                    <field name="brand_id"/>
                     <field name="price"/>
                 </tree>
             </field>
@@ -34,7 +37,7 @@
 
 
 
-        <menuitem id="vca_root_menu" name="VCA"/>
+        <menuitem id="vca_root_menu" name="Certificates App"/>
         <menuitem id="vca_certificate_menu" name="Certificates" parent="vca_root_menu" action="vca_certificate_action"/>
 
     </data>

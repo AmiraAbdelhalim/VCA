@@ -24,6 +24,9 @@ class VcaCertificates(models.Model):
     traffic_department_id = fields.Many2one(comodel_name='vca.traffic_department')
     motor_number = fields.Char()
     chassis_number = fields.Char()
+    brand_id = fields.Many2one(comodel_name='vca.brand')
+    customer_id = fields.Many2one(comodel_name='res.partner')
+
 
     @api.model
     def create(self, vals):
