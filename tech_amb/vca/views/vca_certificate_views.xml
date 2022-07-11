@@ -18,6 +18,34 @@
             </field>
         </record>
 
+        <record id="vca_certificate_form_view" model="ir.ui.view">
+            <field name="name">VCA Certificate Form View</field>
+            <field name="model">vca.certificate</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Print Certificate"/>
+                    </header>
+                    <sheet string="VCA Certificate">
+                        <group col="4">
+                            <field name="vehicle_type" modifiers="{}"/>
+                            <field name="motor_number" modifiers="{}"/>
+                            <field name="certificate_type_id" can_create="true" can_write="true" modifiers="{}"/>
+                            <field name="chassis_number" modifiers="{}"/>
+                            <field name="traffic_department_id" can_create="true" can_write="true" modifiers="{}"/>
+                            <field name="car_model" modifiers="{}"/>
+                            <field name="customer_id" can_create="true" can_write="true" modifiers="{}"/>
+                            <field name="brand_id" can_create="true" can_write="true" modifiers="{}"/>
+                            <field name="price" modifiers="{}"/>
+                            <field name="serial_number" modifiers="{&quot;readonly&quot;: true}" invisible="1"/>
+                            <separator/>
+                        </group>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
 <!--        sequence number -->
         <record id="vca_unique_serial_number" model="ir.sequence">
            <field name="name">Serial Number</field>
@@ -29,15 +57,12 @@
            <field name="number_increment">1</field>
         </record>
 
-         <record id="vca_certificate_action" model="ir.actions.act_window">
+
+        <record id="vca_certificate_action" model="ir.actions.act_window">
             <field name="name">Certificate</field>
             <field name="res_model">vca.certificate</field>
             <field name="view_mode">tree,form</field>
         </record>
-
-
-
-
 
     </data>
 </odoo>

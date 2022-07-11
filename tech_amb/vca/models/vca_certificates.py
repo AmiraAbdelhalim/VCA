@@ -15,16 +15,17 @@ class VcaCertificates(models.Model):
     ]
     CAR_MODEL_YEARS = [(str(year), str(year)) for year in range(datetime.now().year, (datetime.now().year - 21), -1)]
 
-    serial_number = fields.Char('Serial Number', default='', readonly=True)
     vehicle_type = fields.Selection(VEHICLE_TYPES, default=VEHICLE_TYPES[0][0])
-    car_model = fields.Selection(CAR_MODEL_YEARS, default=CAR_MODEL_YEARS[0][0])
-    price = fields.Integer()
-    certificate_type_id = fields.Many2one(comodel_name='vca.certificate_type')
-    traffic_department_id = fields.Many2one(comodel_name='vca.traffic_department')
     motor_number = fields.Char()
+    certificate_type_id = fields.Many2one(comodel_name='vca.certificate_type')
     chassis_number = fields.Char()
-    brand_id = fields.Many2one(comodel_name='vca.brand')
+    traffic_department_id = fields.Many2one(comodel_name='vca.traffic_department')
+    car_model = fields.Selection(CAR_MODEL_YEARS, default=CAR_MODEL_YEARS[0][0])
     customer_id = fields.Many2one(comodel_name='res.partner')
+    brand_id = fields.Many2one(comodel_name='vca.brand')
+    price = fields.Integer()
+    serial_number = fields.Char('Serial Number', default='', readonly=True)
+
 
     @api.model
     def create(self, vals):
