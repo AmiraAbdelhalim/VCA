@@ -8,6 +8,5 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="vca_certificate_type_menu" name="Certificate Types" parent="vca_root_menu" action="vca_certificate_types_action"/>
     </data>
 </odoo>

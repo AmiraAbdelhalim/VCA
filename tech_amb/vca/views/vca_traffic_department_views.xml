@@ -8,6 +8,5 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="vca_traffic_department_menu" name="Traffic Department" parent="vca_root_menu" action="vca_traffic_department_action"/>
     </data>
 </odoo>

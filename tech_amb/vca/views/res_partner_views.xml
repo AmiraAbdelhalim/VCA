@@ -45,6 +45,5 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="res_partner_inherited_menu" name="Customers" parent="vca_root_menu" action="res_partner_inherited_action"/>
     </data>
 </odoo>

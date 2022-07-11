@@ -6,6 +6,7 @@
         "crm"
     ],
     "data": [
+        "views/vca_menu_views.xml",
         "views/vca_certificate_views.xml",
         "views/vca_certificate_type_views.xml",
         "views/vca_traffic_department_views.xml",

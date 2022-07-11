@@ -10,11 +10,10 @@ class VcaCertificates(models.Model):
     VEHICLE_TYPES = [
         ('car', 'Car'),
         ('bus', 'Bus'),
-        ('minibus', 'Minibus'),
-        ('microbus', 'Microbus')
+        ('minibus', 'Mini Bus'),
+        ('microbus', 'Micro Bus')
     ]
-
-    CAR_MODEL_YEARS = [(str(year), str(year)) for year in range(datetime.now().year,(datetime.now().year - 21), -1)]
+    CAR_MODEL_YEARS = [(str(year), str(year)) for year in range(datetime.now().year, (datetime.now().year - 21), -1)]
 
     serial_number = fields.Char('Serial Number', default='', readonly=True)
     vehicle_type = fields.Selection(VEHICLE_TYPES, default=VEHICLE_TYPES[0][0])
@@ -26,7 +25,6 @@ class VcaCertificates(models.Model):
     chassis_number = fields.Char()
     brand_id = fields.Many2one(comodel_name='vca.brand')
     customer_id = fields.Many2one(comodel_name='res.partner')
-
 
     @api.model
     def create(self, vals):
