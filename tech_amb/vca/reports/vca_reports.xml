@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <record id="vca_report" model="ir.actions.report">
+            <field name="name">Certificate Validation Report</field>
+            <field name="model">vca.certificate</field>
+            <field name="report_type">qweb-pdf</field>
+             <field name="binding_model_id" eval="False"/>
+            <field name="report_name">vca.vca_certificate_report_template</field>
+         </record>
+    </data>
+</odoo>

@@ -24,7 +24,9 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button string="Print Certificate"/>
+                        <button name="print_certificate" type="object" string="Print Certificate" attrs="{
+                        'invisible': [('serial_number', '=', '')]
+                        }"/>
                     </header>
                     <sheet string="VCA Certificate">
                         <group col="4">

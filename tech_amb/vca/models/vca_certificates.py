@@ -26,7 +26,6 @@ class VcaCertificates(models.Model):
     price = fields.Integer()
     serial_number = fields.Char('Serial Number', default='', readonly=True)
 
-
     @api.model
     def create(self, vals):
         new_certificate = super(VcaCertificates, self).create(vals)
@@ -34,3 +33,8 @@ class VcaCertificates(models.Model):
             number = self.env['ir.sequence'].get('vca.sequence.code') or ''
             new_certificate.write({'serial_number': number})
         return new_certificate
+
+    def print_certificate(self):
+        print('sab7 el 5er')
+
+        return self.env.ref('vca.vca_report').report_action(self)

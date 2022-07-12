@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="vca_certificate_report_template">
+            <t t-call="web.html_container">
+                <t t-call="web.internal_layout">
+                    <div class="border border-5">
+                        <div class="page mt-5 me-5 ms-5 mb-5">
+                        <t t-foreach="docs" t-as="certificate">
+                            <div class="col-12 text-center">
+                                <h2 class="text-danger">شهادة صلاحية</h2>
+                            </div>
+                            <div class="col-12 text-right">
+                                <b><h4 style="display:inline;" t-out="certificate.traffic_department_id.name"></h4>/</b> <span>السيد اللواء مدير ادارة مرور</span>
+                            </div>
+                            <div class="col-12 text-left">
+                                <p>تحرر في <span t-field="certificate.create_date"  t-options='{"widget": "date"}'></span> </p>
+                            </div>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <div class="col-12 text-center">
+                                <h4><b>،،،،تحية طيبة وبعد</b></h4>
+                            </div>
+                            <br></br>
+                            <div class="col-12 text-right">
+                                <b><h4 style="display:inline;" t-out="certificate.certificate_type_id.name"></h4>/</b> <span>أتشرف بإفادة سيادتكم بأنه تم تعديل</span>
+                            </div>
+                            <br></br>
+                            <br></br>
+                            <div class="row text-right">
+                                <div class="col-6 mt-3">
+                                    <span t-out="certificate.motor_number"></span>/    <span><b>محرك رقم </b></span>
+                                </div>
+                                <div class="col-6 mt-3">
+                                    <span t-out="certificate.chassis_number"></span>/<span><b>شاسية رقم </b></span>
+                                </div>
+                                <div class="col-6 mt-3">
+                                    <span t-out="certificate.car_model"></span>/    <span><b> الموديل </b></span>
+                                </div>
+                                <div class="col-6 mt-3">
+                                    <span t-out="certificate.brand_id.name"></span>/    <span><b> الماركة </b></span>
+                                </div>
+
+                                <div class="col-12 mt-3">
+                                    <span t-out="certificate.customer_id.name"></span>/    <span><b> اسم المالك </b></span>
+                                </div>
+
+                            </div>
+                            <br></br>
+                            <div class="col-12 text-right">
+                                <p>
+                                    حيث أن المؤسسة معتمدة بالهيئة العامة للتنمية الصناعية ومصلحة الرقابة الصناعية ومعتمدة بإدارات المرور ولها سجل تجاري صناعي وبطاقة ضريبية
+                                    <br></br>
+                                    بهذه الصفة وقد تم فحص التعديل والتركيب واللحامات والإصلاحات اللازمة طبقا لأصول الصناعة ودون الإخلال بالتصميم الأصلي ودون المساس
+                                    <br></br>
+                                     بالأجزاء الجوهرية للسيارة وقد تم تجربة السيارة على الطرق المصرية ووجد أنها متزنة وهذه شهادة منا بذلك لتقديمها للمرور
+                                    <br></br>
+                                                                                                                                                            والمالك مسئول مسئولية كاملة عن بيانات الشهادة فبرجاء التكرم والتفضل بالموافقة على ترخيص السيارة
+                                </p>
+
+                            </div>
+                            <br></br>
+                            <div class="col-12 text-center">
+                                <h4><b>،،،،وتفضلوا بقبول فائق الإحترام والتقدير</b></h4>
+                            </div>
+
+                        </t>
+                    </div>
+                    </div>
+
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
