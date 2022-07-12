@@ -4,9 +4,10 @@
 
         <menuitem id="vca_root_menu" name="Certificates App"/>
         <menuitem id="vca_certificate_menu" name="Certificates" parent="vca_root_menu" action="vca_certificate_action"/>
-        <menuitem id="res_partner_inherited_menu" name="Customers" parent="vca_root_menu" action="res_partner_inherited_action"/>
         <menuitem id="vca_certificate_type_menu" name="Certificate Types" parent="vca_root_menu" action="vca_certificate_types_action"/>
         <menuitem id="vca_traffic_department_menu" name="Traffic Department" parent="vca_root_menu" action="vca_traffic_department_action"/>
+        <menuitem id="res_partner_inherited_menu" name="Customers" parent="vca_root_menu" action="res_partner_inherited_action"/>
+
 
 
     </data>

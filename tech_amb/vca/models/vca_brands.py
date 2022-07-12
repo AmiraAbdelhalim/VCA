@@ -5,6 +5,6 @@ class VcaBrand(models.Model):
     _name = 'vca.brand'
     _description = 'VCA brands'
 
-    name = fields.Char()
+    name = fields.Char(required=True)
     certificate_ids = fields.One2many(comodel_name='vca.certificate', inverse_name='brand_id')
 
