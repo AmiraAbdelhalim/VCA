@@ -30,11 +30,9 @@ class VcaCertificates(models.Model):
     def create(self, vals):
         new_certificate = super(VcaCertificates, self).create(vals)
         if new_certificate.serial_number == '':
-            number = self.env['ir.sequence'].get('vca.sequence.code') or ''
+            number = self.env['ir.sequence'].next_by_code('vca.sequence.code') or ''
             new_certificate.write({'serial_number': number})
         return new_certificate
 
     def print_certificate(self):
-        print('sab7 el 5er')
-
         return self.env.ref('vca.vca_report').report_action(self)

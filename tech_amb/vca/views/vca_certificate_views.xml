@@ -48,6 +48,18 @@
             </field>
         </record>
 
+         <record model="ir.ui.view" id="hide_edit_for_normal_user">
+         <field name="name">hide edit</field>
+         <field name="model">vca.certificate</field>
+         <field name="inherit_id" ref="vca_certificate_form_view" />
+         <field name="groups_id" eval="[(6,0, [ref('vca_normal_user_group')])]" />
+         <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="edit">false</attribute>
+            </xpath>
+         </field>
+    </record>
+
 <!--        sequence number -->
         <record id="vca_unique_serial_number" model="ir.sequence">
            <field name="name">Serial Number</field>
@@ -55,7 +67,6 @@
            <field name="active">TRUE</field>
            <field name="prefix">TD</field>
            <field name="padding">5</field>
-           <field name="number_next">1</field>
            <field name="number_increment">1</field>
         </record>
 

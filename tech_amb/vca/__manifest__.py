@@ -6,6 +6,8 @@
         "crm"
     ],
     "data": [
+        "security/vca_security.xml",
+        "security/ir.model.access.csv",
         "views/vca_menu_views.xml",
         "views/vca_certificate_views.xml",
         "views/vca_certificate_type_views.xml",

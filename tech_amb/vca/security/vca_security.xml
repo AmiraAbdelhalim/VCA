@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<!--        vca category-->
+        <record id="vca_groups_category" model="ir.module.category">
+            <field name="name">VCA</field>
+        </record>
+
+<!--        vca normal users group-->
+        <record id="vca_normal_user_group" model="res.groups">
+            <field name="name">Normal User</field>
+            <field name="category_id" ref="vca_groups_category"/>
+        </record>
+
+<!--        vca supervisors group-->
+        <record id="vca_supervisor_group" model="res.groups">
+            <field name="name">Supervisor</field>
+            <field name="category_id" ref="vca_groups_category"/>
+        </record>
+
+<!--        access rules-->
+        <record id="vca_normal_user_record" model="ir.rule">
+            <field name="name">Access Owned Records</field>
+            <field name="model_id" ref="model_vca_certificate" />
+            <field name="groups" eval="[(4, ref('vca_normal_user_group'))]" />
+            <field name="domain_force">[('create_uid', '=', user.id)]</field>
+
+        </record>
+
+        <record id="vca_supervisor_record" model="ir.rule">
+            <field name="name">Access All Records</field>
+            <field name="model_id" ref="model_vca_certificate" />
+            <field name="groups" eval="[(4, ref('vca_supervisor_group'))]" />
+            <field name="domain_force"></field>
+        </record>
+
+
+    </data>
+</odoo>
