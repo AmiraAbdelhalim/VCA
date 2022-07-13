@@ -25,6 +25,9 @@ class VcaCertificates(models.Model):
     brand_id = fields.Many2one(comodel_name='vca.brand', required=True)
     price = fields.Integer(required=True)
     serial_number = fields.Char('Serial Number', default='', readonly=True)
+    print_history_ids = fields.One2many(comodel_name='vca.print.certificate.history', inverse_name='certificate_id')
+    certificate_printed = fields.Boolean(related='print_history_ids.certificate_printed')
+    allow_reprint = fields.Boolean(related='print_history_ids.allow_reprint')
 
     @api.model
     def create(self, vals):
@@ -35,4 +38,38 @@ class VcaCertificates(models.Model):
         return new_certificate
 
     def print_certificate(self):
+        self.print_history()
         return self.env.ref('vca.vca_report').report_action(self)
+
+    def print_history(self):
+        user_is_normal_user = self.env['res.users'].has_group('vca.vca_normal_user_group')
+        if user_is_normal_user:
+            self.env['vca.print.certificate.history'].create({
+                'certificate_printed': True,
+                'allow_reprint': False,
+                'certificate_id': self.id
+            })
+
+    def allowed_reprint(self):
+        user_is_supervisor = self.env['res.users'].has_group('vca.vca_supervisor_group')
+        if user_is_supervisor:
+            record_to_reprint = self.env['vca.print.certificate.history'].search([('certificate_id', '=', self.id)])
+            for record in record_to_reprint:
+                print('record_to_reprint ', record)
+                # if not record.allow_reprint:
+                vals = {
+                    'certificate_printed': False,
+                    'allow_reprint': True
+                }
+                print('vals => ', vals)
+                record.write(vals)
+
+
+
+class VcaPrintCertificateHistory(models.Model):
+    _name = 'vca.print.certificate.history'
+    _description = 'Track Print certificate History'
+
+    certificate_printed = fields.Boolean(default=False)
+    allow_reprint = fields.Boolean()
+    certificate_id = fields.Many2one(comodel_name='vca.certificate')

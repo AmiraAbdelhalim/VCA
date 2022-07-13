@@ -25,7 +25,10 @@
                 <form>
                     <header>
                         <button name="print_certificate" type="object" string="Print Certificate" attrs="{
-                        'invisible': [('serial_number', '=', '')]
+                        'invisible': ['|', ('serial_number', '=', ''), ('certificate_printed', '=', True)]
+                        }"/>
+                        <button name="allowed_reprint" type="object" string="Allow Reprint" groups="vca.vca_supervisor_group" attrs="{
+                        'visible': [('allow_reprint', '=', True)]
                         }"/>
                     </header>
                     <sheet string="VCA Certificate">
@@ -39,26 +42,39 @@
                             <field name="customer_id" can_create="true" can_write="true" modifiers="{}"/>
                             <field name="brand_id" can_create="true" can_write="true" modifiers="{}"/>
                             <field name="price" modifiers="{}"/>
-                            <field name="serial_number" modifiers="{&quot;readonly&quot;: true}" invisible="1"/>
+                            <field name="serial_number" modifiers="{&quot;readonly&quot;: true}" />
+                            <field name="certificate_printed" invisible="1"/>
+                            <field name="allow_reprint" invisible="1"/>
                             <separator/>
                         </group>
+                        <notebook groups="vca.vca_supervisor_group">
+                            <page string="Print History">
+                                <field name="print_history_ids" readonly="1">
+                                    <tree>
+                                        <field name="create_uid"/>
+                                        <field name="create_date"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
 
             </field>
         </record>
 
+<!--        hide edit btn-->
          <record model="ir.ui.view" id="hide_edit_for_normal_user">
-         <field name="name">hide edit</field>
-         <field name="model">vca.certificate</field>
-         <field name="inherit_id" ref="vca_certificate_form_view" />
-         <field name="groups_id" eval="[(6,0, [ref('vca_normal_user_group')])]" />
-         <field name="arch" type="xml">
-            <xpath expr="//form" position="attributes">
-                <attribute name="edit">false</attribute>
-            </xpath>
-         </field>
-    </record>
+             <field name="name">hide edit</field>
+             <field name="model">vca.certificate</field>
+             <field name="inherit_id" ref="vca_certificate_form_view" />
+             <field name="groups_id" eval="[(6,0, [ref('vca_normal_user_group')])]" />
+             <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="edit">false</attribute>
+                </xpath>
+             </field>
+        </record>
 
 <!--        sequence number -->
         <record id="vca_unique_serial_number" model="ir.sequence">
