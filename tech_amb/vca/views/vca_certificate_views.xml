@@ -26,7 +26,7 @@
                     <header>
 
                         <button name="print_certificate" type="object" string="Print Certificate" groups="vca.vca_normal_user_group" attrs="{
-                        'invisible': ['|', ('serial_number', '=', ''), ('allow_reprint', '=', False)],
+                        'invisible': ['|', ('serial_number', '=', ''), ('certificate_printed', '=', True)],
                         }"/>
 
                         <button name="allowed_reprint" type="object" string="Allow Reprint" groups="vca.vca_supervisor_group"
@@ -45,7 +45,6 @@
                             <field name="price" modifiers="{}"/>
                             <field name="serial_number" modifiers="{&quot;readonly&quot;: true}" invisible="1"/>
                             <field name="certificate_printed" invisible="1"/>
-                            <field name="allow_reprint" invisible="1"/>
                             <separator/>
                         </group>
                         <notebook groups="vca.vca_supervisor_group">

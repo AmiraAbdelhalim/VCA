@@ -27,7 +27,6 @@ class VcaCertificates(models.Model):
     serial_number = fields.Char('Serial Number', default='', readonly=True)
     print_history_ids = fields.One2many(comodel_name='vca.print.certificate.history', inverse_name='certificate_id')
     certificate_printed = fields.Boolean(default=False)
-    allow_reprint = fields.Boolean(default=True)
 
     @api.model
     def create(self, vals):
@@ -44,10 +43,8 @@ class VcaCertificates(models.Model):
     def print_history(self):
         user_is_normal_user = self.env['res.users'].has_group('vca.vca_normal_user_group')
         if user_is_normal_user:
-            self.allow_reprint = False
             self.certificate_printed = True
             self.env['vca.print.certificate.history'].create({
-                'certificate_printed': True,
                 'allow_reprint': False,
                 'certificate_id': self.id
             })
@@ -58,12 +55,8 @@ class VcaCertificates(models.Model):
             record_to_reprint = self.env['vca.print.certificate.history'].search([('certificate_id', '=', self.id)],
                                                                                  limit=1, order='create_date desc')
             if not record_to_reprint.allow_reprint:
-                self.allow_reprint = True
                 self.certificate_printed = False
-                vals = {
-                    'certificate_printed': False,
-                    'allow_reprint': True
-                }
+                vals = {'allow_reprint': True}
                 record_to_reprint.write(vals)
 
 
@@ -71,6 +64,5 @@ class VcaPrintCertificateHistory(models.Model):
     _name = 'vca.print.certificate.history'
     _description = 'Track Print certificate History'
 
-    certificate_printed = fields.Boolean()
     allow_reprint = fields.Boolean()
     certificate_id = fields.Many2one(comodel_name='vca.certificate')
