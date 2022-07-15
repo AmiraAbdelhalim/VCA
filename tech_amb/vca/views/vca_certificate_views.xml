@@ -24,12 +24,13 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button name="print_certificate" type="object" string="Print Certificate" attrs="{
-                        'invisible': ['|', ('serial_number', '=', ''), ('certificate_printed', '=', True)]
+
+                        <button name="print_certificate" type="object" string="Print Certificate" groups="vca.vca_normal_user_group" attrs="{
+                        'invisible': ['|', ('serial_number', '=', ''), ('allow_reprint', '=', False)],
                         }"/>
-                        <button name="allowed_reprint" type="object" string="Allow Reprint" groups="vca.vca_supervisor_group" attrs="{
-                        'visible': [('allow_reprint', '=', True)]
-                        }"/>
+
+                        <button name="allowed_reprint" type="object" string="Allow Reprint" groups="vca.vca_supervisor_group"
+                        attrs="{'invisible': [('serial_number', '=', '')]}"/>
                     </header>
                     <sheet string="VCA Certificate">
                         <group col="4">
@@ -42,7 +43,7 @@
                             <field name="customer_id" can_create="true" can_write="true" modifiers="{}"/>
                             <field name="brand_id" can_create="true" can_write="true" modifiers="{}"/>
                             <field name="price" modifiers="{}"/>
-                            <field name="serial_number" modifiers="{&quot;readonly&quot;: true}" />
+                            <field name="serial_number" modifiers="{&quot;readonly&quot;: true}" invisible="1"/>
                             <field name="certificate_printed" invisible="1"/>
                             <field name="allow_reprint" invisible="1"/>
                             <separator/>
