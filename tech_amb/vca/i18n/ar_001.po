@@ -6,14 +6,39 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-10 04:04+0000\n"
-"PO-Revision-Date: 2022-07-10 04:04+0000\n"
+"POT-Creation-Date: 2022-07-17 22:29+0000\n"
+"PO-Revision-Date: 2022-07-17 22:29+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: vca
+#: model_terms:ir.ui.view,arch_db:vca.vca_certificate_report_template
+msgid "/    <span><b> اسم المالك </b></span>"
+msgstr ""
+
+#. module: vca
+#: model_terms:ir.ui.view,arch_db:vca.vca_certificate_report_template
+msgid "/    <span><b> الماركة </b></span>"
+msgstr ""
+
+#. module: vca
+#: model_terms:ir.ui.view,arch_db:vca.vca_certificate_report_template
+msgid "/    <span><b> الموديل </b></span>"
+msgstr ""
+
+#. module: vca
+#: model_terms:ir.ui.view,arch_db:vca.vca_certificate_report_template
+msgid "/    <span><b>محرك رقم </b></span>"
+msgstr ""
+
+#. module: vca
+#: model_terms:ir.ui.view,arch_db:vca.vca_certificate_report_template
+msgid "/<span><b>شاسية رقم </b></span>"
+msgstr ""
 
 #. module: vca
 #: model:ir.model.fields.selection,name:vca.selection__vca_certificate__car_model__2002
@@ -121,195 +146,297 @@ msgid "2022"
 msgstr ""
 
 #. module: vca
+#: model_terms:ir.ui.view,arch_db:vca.vca_certificate_report_template
+msgid "<b>،،،،تحية طيبة وبعد</b>"
+msgstr ""
+
+#. module: vca
+#: model_terms:ir.ui.view,arch_db:vca.vca_certificate_report_template
+msgid "<b>،،،،وتفضلوا بقبول فائق الإحترام والتقدير</b>"
+msgstr ""
+
+#. module: vca
+#: model_terms:ir.ui.view,arch_db:vca.vca_certificate_report_template
+msgid "<span>أتشرف بإفادة سيادتكم بأنه تم تعديل</span>"
+msgstr ""
+
+#. module: vca
+#: model_terms:ir.ui.view,arch_db:vca.vca_certificate_report_template
+msgid "<span>السيد اللواء مدير ادارة مرور</span>"
+msgstr ""
+
+#. module: vca
+#: model:ir.model.fields,field_description:vca.field_vca_print_certificate_history__allow_reprint
+#: model_terms:ir.ui.view,arch_db:vca.vca_certificate_form_view
+msgid "Allow Reprint"
+msgstr "السماح بالطباعة"
+
+#. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_certificate__brand_id
 msgid "Brand"
-msgstr ""
+msgstr "الماركة"
 
 #. module: vca
 #: model:ir.model.fields.selection,name:vca.selection__vca_certificate__vehicle_type__bus
 msgid "Bus"
-msgstr ""
+msgstr "حافلة"
 
 #. module: vca
 #: model:ir.model.fields.selection,name:vca.selection__vca_certificate__vehicle_type__car
 msgid "Car"
-msgstr ""
+msgstr "سيارة"
 
 #. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_certificate__car_model
 msgid "Car Model"
-msgstr ""
+msgstr "موديل السيارة"
 
 #. module: vca
 #: model:ir.actions.act_window,name:vca.vca_certificate_action
 #: model:ir.model.fields,field_description:vca.field_vca_brand__certificate_ids
 #: model:ir.model.fields,field_description:vca.field_vca_certificate_type__certificate_ids
+#: model:ir.model.fields,field_description:vca.field_vca_print_certificate_history__certificate_id
 #: model:ir.model.fields,field_description:vca.field_vca_traffic_department__certificate_ids
 msgid "Certificate"
-msgstr ""
+msgstr "شهادة"
+
+#. module: vca
+#: model:ir.model.fields,field_description:vca.field_vca_certificate__certificate_printed
+msgid "Certificate Printed"
+msgstr "تم طباعة الشهادة"
 
 #. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_certificate__certificate_type_id
 msgid "Certificate Type"
-msgstr ""
+msgstr "نوع الشهادة"
 
 #. module: vca
 #: model:ir.actions.act_window,name:vca.vca_certificate_types_action
 #: model:ir.ui.menu,name:vca.vca_certificate_type_menu
 msgid "Certificate Types"
-msgstr ""
+msgstr "أنواع الشهادة"
+
+#. module: vca
+#: model:ir.actions.report,name:vca.vca_report
+msgid "Certificate Validation Report"
+msgstr "تقرير تدقيق الشهادة"
 
 #. module: vca
 #: model:ir.ui.menu,name:vca.vca_certificate_menu
 msgid "Certificates"
-msgstr ""
+msgstr "الشهادات"
 
 #. module: vca
 #: model:ir.ui.menu,name:vca.vca_root_menu
 msgid "Certificates App"
-msgstr ""
+msgstr "تطبيق الشهادات"
 
 #. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_certificate__chassis_number
 msgid "Chassis Number"
-msgstr ""
+msgstr "رقم الشاسية"
 
 #. module: vca
 #: model:ir.model,name:vca.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "جهة الاتصال"
 
 #. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_brand__create_uid
 #: model:ir.model.fields,field_description:vca.field_vca_certificate__create_uid
 #: model:ir.model.fields,field_description:vca.field_vca_certificate_type__create_uid
+#: model:ir.model.fields,field_description:vca.field_vca_print_certificate_history__create_uid
 #: model:ir.model.fields,field_description:vca.field_vca_traffic_department__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "أُضيف بواسطة"
 
 #. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_brand__create_date
 #: model:ir.model.fields,field_description:vca.field_vca_certificate__create_date
 #: model:ir.model.fields,field_description:vca.field_vca_certificate_type__create_date
+#: model:ir.model.fields,field_description:vca.field_vca_print_certificate_history__create_date
 #: model:ir.model.fields,field_description:vca.field_vca_traffic_department__create_date
 msgid "Created on"
-msgstr ""
+msgstr "أُضيف في"
+
+#. module: vca
+#: model:ir.model.fields,field_description:vca.field_vca_certificate__customer_id
+msgid "Customer"
+msgstr "عميل"
 
 #. module: vca
 #: model:ir.actions.act_window,name:vca.res_partner_inherited_action
-#: model:ir.model.fields,field_description:vca.field_vca_certificate__customer_id
-msgid "Customer"
-msgstr ""
+msgid "Customer Action"
+msgstr "حركة العميل"
 
 #. module: vca
 #: model:ir.ui.menu,name:vca.res_partner_inherited_menu
 msgid "Customers"
-msgstr ""
+msgstr "العملاء"
 
 #. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_brand__display_name
 #: model:ir.model.fields,field_description:vca.field_vca_certificate__display_name
 #: model:ir.model.fields,field_description:vca.field_vca_certificate_type__display_name
+#: model:ir.model.fields,field_description:vca.field_vca_print_certificate_history__display_name
 #: model:ir.model.fields,field_description:vca.field_vca_traffic_department__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "الاسم"
 
 #. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_brand__id
 #: model:ir.model.fields,field_description:vca.field_vca_certificate__id
 #: model:ir.model.fields,field_description:vca.field_vca_certificate_type__id
+#: model:ir.model.fields,field_description:vca.field_vca_print_certificate_history__id
 #: model:ir.model.fields,field_description:vca.field_vca_traffic_department__id
 msgid "ID"
-msgstr ""
+msgstr "الرقم التعريفي"
 
 #. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_brand____last_update
 #: model:ir.model.fields,field_description:vca.field_vca_certificate____last_update
 #: model:ir.model.fields,field_description:vca.field_vca_certificate_type____last_update
+#: model:ir.model.fields,field_description:vca.field_vca_print_certificate_history____last_update
 #: model:ir.model.fields,field_description:vca.field_vca_traffic_department____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "اخر تعديل في"
 
 #. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_brand__write_uid
 #: model:ir.model.fields,field_description:vca.field_vca_certificate__write_uid
 #: model:ir.model.fields,field_description:vca.field_vca_certificate_type__write_uid
+#: model:ir.model.fields,field_description:vca.field_vca_print_certificate_history__write_uid
 #: model:ir.model.fields,field_description:vca.field_vca_traffic_department__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "اخر تحديث بواسطة"
 
 #. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_brand__write_date
 #: model:ir.model.fields,field_description:vca.field_vca_certificate__write_date
 #: model:ir.model.fields,field_description:vca.field_vca_certificate_type__write_date
+#: model:ir.model.fields,field_description:vca.field_vca_print_certificate_history__write_date
 #: model:ir.model.fields,field_description:vca.field_vca_traffic_department__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "اخر تحديث في"
 
 #. module: vca
 #: model:ir.model.fields.selection,name:vca.selection__vca_certificate__vehicle_type__microbus
-msgid "Microbus"
-msgstr ""
+msgid "Micro Bus"
+msgstr "ميكروباص"
 
 #. module: vca
 #: model:ir.model.fields.selection,name:vca.selection__vca_certificate__vehicle_type__minibus
-msgid "Minibus"
-msgstr ""
+msgid "Mini Bus"
+msgstr "ميني باص"
 
 #. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_certificate__motor_number
 msgid "Motor Number"
-msgstr ""
+msgstr "رقم المحرك"
 
 #. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_brand__name
 #: model:ir.model.fields,field_description:vca.field_vca_certificate_type__name
 #: model:ir.model.fields,field_description:vca.field_vca_traffic_department__name
 msgid "Name"
-msgstr ""
+msgstr "الاسم"
+
+#. module: vca
+#: model:res.groups,name:vca.vca_normal_user_group
+msgid "Normal User"
+msgstr "مستخدم عادي"
 
 #. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_certificate__price
 msgid "Price"
-msgstr ""
+msgstr "السعر"
+
+#. module: vca
+#: model_terms:ir.ui.view,arch_db:vca.vca_certificate_form_view
+msgid "Print Certificate"
+msgstr "طباعة الشهادة"
+
+#. module: vca
+#: model:ir.model.fields,field_description:vca.field_vca_certificate__print_history_ids
+#: model_terms:ir.ui.view,arch_db:vca.vca_certificate_form_view
+msgid "Print History"
+msgstr "سجل طباعة الشهادات"
 
 #. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_certificate__serial_number
 msgid "Serial Number"
-msgstr ""
+msgstr "رقم التسلسل"
+
+#. module: vca
+#: model:res.groups,name:vca.vca_supervisor_group
+msgid "Supervisor"
+msgstr "مشرف"
+
+#. module: vca
+#: model:ir.model,name:vca.model_vca_print_certificate_history
+msgid "Track Print certificate History"
+msgstr "تتبع سجل طباعة الشهادات"
 
 #. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_certificate__traffic_department_id
 #: model:ir.ui.menu,name:vca.vca_traffic_department_menu
 msgid "Traffic Department"
-msgstr ""
+msgstr "قسم المرور"
 
 #. module: vca
 #: model:ir.actions.act_window,name:vca.vca_traffic_department_action
 msgid "Traffic Departments"
-msgstr ""
+msgstr "أقسام المرور"
+
+#. module: vca
+#: model:ir.module.category,name:vca.vca_groups_category
+msgid "VCA"
+msgstr "تطبيق التحقق من الشهادات(ت.ت.ش)"
 
 #. module: vca
 #: model:ir.model,name:vca.model_vca_certificate
+#: model_terms:ir.ui.view,arch_db:vca.vca_certificate_form_view
 msgid "VCA Certificate"
-msgstr ""
+msgstr "(ت.ت.ش) شهادة"
 
 #. module: vca
 #: model:ir.model,name:vca.model_vca_certificate_type
 msgid "VCA Certificate Types"
-msgstr ""
+msgstr "(ت.ت.ش) أنواع الشهادات"
 
 #. module: vca
 #: model:ir.model,name:vca.model_vca_traffic_department
 msgid "VCA Traffic Department"
-msgstr ""
+msgstr "(ت.ت.ش) قسم المرور"
 
 #. module: vca
 #: model:ir.model,name:vca.model_vca_brand
 msgid "VCA brands"
-msgstr ""
+msgstr "(ت.ت.ش) ماركات"
 
 #. module: vca
 #: model:ir.model.fields,field_description:vca.field_vca_certificate__vehicle_type
 msgid "Vehicle Type"
+msgstr "نوع المركبة"
+
+#. module: vca
+#: model_terms:ir.ui.view,arch_db:vca.vca_certificate_report_template
+msgid "تحرر في"
+msgstr ""
+
+#. module: vca
+#: model_terms:ir.ui.view,arch_db:vca.vca_certificate_report_template
+msgid ""
+"حيث أن المؤسسة معتمدة بالهيئة العامة للتنمية الصناعية ومصلحة الرقابة الصناعية ومعتمدة بإدارات المرور ولها سجل تجاري صناعي وبطاقة ضريبية\n"
+"                                    <br/>\n"
+"                                    بهذه الصفة وقد تم فحص التعديل والتركيب واللحامات والإصلاحات اللازمة طبقا لأصول الصناعة ودون الإخلال بالتصميم الأصلي ودون المساس\n"
+"                                    <br/>\n"
+"                                     بالأجزاء الجوهرية للسيارة وقد تم تجربة السيارة على الطرق المصرية ووجد أنها متزنة وهذه شهادة منا بذلك لتقديمها للمرور\n"
+"                                    <br/>\n"
+"                                                                                                                                                            والمالك مسئول مسئولية كاملة عن بيانات الشهادة فبرجاء التكرم والتفضل بالموافقة على ترخيص السيارة"
+msgstr ""
+
+#. module: vca
+#: model_terms:ir.ui.view,arch_db:vca.vca_certificate_report_template
+msgid "شهادة صلاحية"
 msgstr ""
