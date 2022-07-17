@@ -5,14 +5,14 @@
         <template id="vca_certificate_report_template">
             <t t-call="web.html_container">
                 <t t-call="web.internal_layout">
-                    <div class="border border-5">
+                    <div  style="border: 3px solid grey;">
                         <div class="page mt-5 me-5 ms-5 mb-5">
                         <t t-foreach="docs" t-as="certificate">
                             <div class="col-12 text-center">
                                 <h2 class="text-danger">شهادة صلاحية</h2>
                             </div>
                             <div class="col-12 text-right">
-                                <b><h4 style="display:inline;" t-out="certificate.traffic_department_id.name"></h4>/</b> <span>السيد اللواء مدير ادارة مرور</span>
+                                <b><h4 class="mr-3" style="display:inline;" t-out="certificate.traffic_department_id.name"></h4>/</b> <span>السيد اللواء مدير ادارة مرور</span>
                             </div>
                             <div class="col-12 text-left">
                                 <p>تحرر في <span t-field="certificate.create_date"  t-options='{"widget": "date"}'></span> </p>
@@ -25,26 +25,26 @@
                             </div>
                             <br></br>
                             <div class="col-12 text-right">
-                                <b><h4 style="display:inline;" t-out="certificate.certificate_type_id.name"></h4>/</b> <span>أتشرف بإفادة سيادتكم بأنه تم تعديل</span>
+                                <b><h4 class="mr-3" style="display:inline;" t-out="certificate.certificate_type_id.name"></h4>/</b> <span>أتشرف بإفادة سيادتكم بأنه تم تعديل</span>
                             </div>
                             <br></br>
                             <br></br>
-                            <div class="row text-right">
+                            <div class="row text-right px-2">
                                 <div class="col-6 mt-3">
-                                    <span t-out="certificate.motor_number"></span>/    <span><b>محرك رقم </b></span>
+                                    <span class="mr-5" t-out="certificate.motor_number"></span>/    <span><b>محرك رقم </b></span>
                                 </div>
                                 <div class="col-6 mt-3">
-                                    <span t-out="certificate.chassis_number"></span>/<span><b>شاسية رقم </b></span>
+                                    <span class="mr-5" t-out="certificate.chassis_number"></span>/<span><b>شاسية رقم </b></span>
                                 </div>
                                 <div class="col-6 mt-3">
-                                    <span t-out="certificate.car_model"></span>/    <span><b> الموديل </b></span>
+                                    <span class="mr-5" t-out="certificate.car_model"></span>/    <span><b> الموديل </b></span>
                                 </div>
                                 <div class="col-6 mt-3">
-                                    <span t-out="certificate.brand_id.name"></span>/    <span><b> الماركة </b></span>
+                                    <span class="mr-5" t-out="certificate.brand_id.name"></span>/    <span><b> الماركة </b></span>
                                 </div>
 
                                 <div class="col-12 mt-3">
-                                    <span t-out="certificate.customer_id.name"></span>/    <span><b> اسم المالك </b></span>
+                                    <span class="mr-5" t-out="certificate.customer_id.name"></span>/    <span><b> اسم المالك </b></span>
                                 </div>
 
                             </div>

@@ -40,7 +40,7 @@
         </record>
 
         <record id="res_partner_inherited_action" model="ir.actions.act_window">
-            <field name="name">Customer</field>
+            <field name="name">Customer Action</field>
             <field name="res_model">res.partner</field>
             <field name="view_mode">tree,form</field>
         </record>

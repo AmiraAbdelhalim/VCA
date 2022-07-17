@@ -10,6 +10,7 @@
                     <field name="serial_number"/>
                     <field name="vehicle_type"/>
                     <field name="certificate_type_id"/>
+                    <field name="traffic_department_id"/>
                     <field name="customer_id"/>
                     <field name="car_model"/>
                     <field name="brand_id"/>
@@ -30,7 +31,9 @@
                         }"/>
 
                         <button name="allowed_reprint" type="object" string="Allow Reprint" groups="vca.vca_supervisor_group"
-                        attrs="{'invisible': [('serial_number', '=', '')]}"/>
+                        attrs="{
+                        'invisible': [('serial_number', '=', '')]
+                        }"/>
                     </header>
                     <sheet string="VCA Certificate">
                         <group col="4">
@@ -53,6 +56,7 @@
                                     <tree>
                                         <field name="create_uid"/>
                                         <field name="create_date"/>
+                                        <field name="allow_reprint"/>
                                     </tree>
                                 </field>
                             </page>
